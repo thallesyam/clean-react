@@ -2,8 +2,7 @@
   "name": "clean-react",
   "version": "1.0.0",
   "description": "NodeJs Rest API using TDD, Clean Architecture and Typescript",
-  "author": "Rodrigo Manguinho",
-  "license": "GNU GPL3",
+  "author": "Thalles Ian",
   "scripts": {
     "start": "webpack-dev-server --open",
     "test": "jest --passWithNoTests --no-cache --runInBand",
@@ -36,7 +35,6 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^25.5.4",
     "lint-staged": "^10.2.2",
-    "node-sass": "^4.14.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
     "ts-jest": "^25.5.0",
@@ -48,8 +46,9 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-router-dom": "^5.2.0"
+    "node-sass": "^4.14.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-router-dom": "^5.3.1"
   }
 }
