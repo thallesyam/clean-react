@@ -1,4 +1,4 @@
-import { AuthenticationParams } from "domain/usecases/authentication";
+import { AuthenticationParams } from "@/domain/usecases/authentication";
 import { randEmail, randPassword } from '@ngneat/falso'
 
 export const mockAuthentication = (): AuthenticationParams => ({

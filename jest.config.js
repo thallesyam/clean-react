@@ -5,6 +5,9 @@ module.exports = {
   ],
   coverageDirectory: 'coverage',
   testEnvironment: 'node',
+  moduleNameMapper: {
+    '@/(.*)': '<rootDir>/src/$1'
+  },
   transform: {
     '.+\\.ts$': 'ts-jest'
   }
