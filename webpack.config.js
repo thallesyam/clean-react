@@ -1,9 +1,7 @@
-const { merge } = require('webpack-merge')
-const common = require('./webpack.common')
 const path = require('path')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
-module.exports = merge(common, {
+module.exports = {
   mode: 'development',
   entry: './src/main/index.tsx',
   output: {
@@ -42,14 +40,10 @@ module.exports = merge(common, {
     static: {
       directory: './public'
     },
-    externals: {
-      react: 'React',
-      'react-dom': 'ReactDOM'
-    },
     port: 8080
   },
 
   plugins: [
     new CleanWebpackPlugin()
   ]
-})
+}
