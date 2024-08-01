@@ -13,4 +13,4 @@ const Input = (props: Props) => {
   )
 }
 
-export default memo(Input)
+export default Input
