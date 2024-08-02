@@ -13,8 +13,6 @@ const Input = (props: Props) => {
   }
 
   const getTitle = (): string => {
-    console.log(error)
-
     return error
   }
 
