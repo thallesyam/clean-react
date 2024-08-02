@@ -5,8 +5,8 @@ import Context from '@/presentation/contexts/form/form-context'
 type Props = InputHTMLAttributes<HTMLInputElement>
 
 const Input = (props: Props) => {
-  const { errorState } = useContext(Context)
-  const error = errorState[props.name]
+  const { state, setState } = useContext(Context)
+  const error = state[`${props.name}Error`]
 
   const getStatus = (): string => {
     return '🔴'
@@ -20,9 +20,17 @@ const Input = (props: Props) => {
     event.target.readOnly = false
   }
 
+  const handleChange = (event: FocusEvent<HTMLInputElement>): void => {
+    setState({
+      ...state,
+      [event.target.name]: event.target.value
+    })
+
+  }
+
   return (
     <div className={Styles.inputWrap}>
-      <input {...props} readOnly onFocus={enableInput} />
+      <input {...props} data-testid={props.name} readOnly onFocus={enableInput} onChange={handleChange} />
       <span data-testid={`${props.name}-status`} title={getTitle()} className={Styles.status}>
         {getStatus()}
       </span>
