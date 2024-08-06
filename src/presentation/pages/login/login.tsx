@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { FormEvent, FormEventHandler, useEffect, useState } from 'react'
 import Styles from './login-styles.scss'
 import { Footer, FormStatus, Input, LoginHeader } from '@/presentation/components'
 import Context from '@/presentation/contexts/form/form-context'
@@ -18,6 +18,11 @@ const Login = ({ validation }: Props) => {
     mainError: '',
   })
 
+  const handleSubmit = (event: FormEvent): void => {
+    event.preventDefault()
+    setState({ ...state, isLoading: true })
+  }
+
   useEffect(() => {
     setState({
       ...state,
@@ -30,7 +35,7 @@ const Login = ({ validation }: Props) => {
     <div className={Styles.login}>
       <LoginHeader />
       <Context.Provider value={{state, setState}}>
-        <form className={Styles.form}>
+        <form className={Styles.form} onSubmit={handleSubmit}>
           <h2>Login</h2>
           <Input type="email" name='email' placeholder='Digite o seu e-mail' />
           <Input type="password" name='password' placeholder='Digite a sua senha' />
